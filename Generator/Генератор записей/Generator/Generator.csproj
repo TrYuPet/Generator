@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E5FB4E02-DE2D-41B5-9D36-56FBE031C997}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RecordsGenerator</RootNamespace>
+    <AssemblyName>Generator</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommandLineTools, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CommandLineTools\bin\Debug\CommandLineTools.dll</HintPath>
+    </Reference>
+    <Reference Include="Generator">
+      <HintPath>..\ConsoleGenerator\ConsoleGenerator\bin\Debug\Generator.dll</HintPath>
+    </Reference>
+    <Reference Include="JournalRecord, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\JournalRecord\bin\Debug\JournalRecord.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject">
+      <HintPath>..\Ninject\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Settings, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Settings\bin\Debug\Settings.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FieldsGenerator\ExtensionGenerator.cs" />
+    <Compile Include="FieldsGenerator\FileNameGenerator.cs" />
+    <Compile Include="GeneratedValues\GeneratedExtension.cs" />
+    <Compile Include="GeneratedValues\GeneratedFileName.cs" />
+    <Compile Include="GeneratedValues\GeneratedIp.cs" />
+    <Compile Include="GeneratedValues\GeneratedProtocol.cs" />
+    <Compile Include="GeneratedValues\GeneratedQueryMethod.cs" />
+    <Compile Include="GeneratedValues\GeneratedQueryTime.cs" />
+    <Compile Include="GeneratedValues\GeneratedServerResponseCode.cs" />
+    <Compile Include="GeneratedValues\GeneratedSizeOfResponse.cs" />
+    <Compile Include="GeneratedValues\GeneratedUniqueIpList.cs" />
+    <Compile Include="GeneratedValues\IGeneratedValue.cs" />
+    <Compile Include="Generator.cs" />
+    <Compile Include="GeneratorNinjectModule.cs" />
+    <Compile Include="IGenerator.cs" />
+    <Compile Include="FieldsGenerator\IpGenerator.cs" />
+    <Compile Include="Parameters of Generator\ExtensionGeneratorParameters.cs" />
+    <Compile Include="Parameters of Generator\FileNameGeneratorParameters.cs" />
+    <Compile Include="Parameters of Generator\IParametersGenerator.cs" />
+    <Compile Include="Parameters of Generator\IpGeneratorParameters.cs" />
+    <Compile Include="Parameters of Generator\ProtocolGeneratorParameters.cs" />
+    <Compile Include="Parameters of Generator\QueryMethodGeneratorParameters.cs" />
+    <Compile Include="Parameters of Generator\QueryTimeGeneratorParameters.cs" />
+    <Compile Include="Parameters of Generator\RNG.cs" />
+    <Compile Include="Parameters of Generator\ServerResponseCodeGeneratorParameters.cs" />
+    <Compile Include="Parameters of Generator\SizeOfResponseGeneratorParameters.cs" />
+    <Compile Include="Parameters of Generator\UniqueIpListGeneratorParameters.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="FieldsGenerator\ProtocolGenerator.cs" />
+    <Compile Include="FieldsGenerator\QueryMethodGenerator.cs" />
+    <Compile Include="FieldsGenerator\QueryTimeGenerator.cs" />
+    <Compile Include="FieldsGenerator\RandomValueGenerator.cs" />
+    <Compile Include="FieldsGenerator\ServerResponseCodeGenerator.cs" />
+    <Compile Include="FieldsGenerator\SizeOfResponseGenerator.cs" />
+    <Compile Include="FieldsGenerator\UniqueIpListGenerator.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

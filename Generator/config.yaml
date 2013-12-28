@@ -1,0 +1,7 @@
+{methods:POST,weightCoefficient:10}
+{methods:DELETE,weightCoefficient:100}
+{methods:LINK,weightCoefficient:0}
+{serverResponseCodes:501,weightCoefficient:100}
+{serverResponseCodes:200,weightCoefficient:0}
+{serverResponseCodes:204,weightCoefficient:0}
+{serverResponseCodes:401,weightCoefficient:0}
